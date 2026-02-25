@@ -1,0 +1,46 @@
+.card {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    border: 5px solid palevioletred;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    transition: 0.5s transform ease-in-out;
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.card::after {
+    content: "";
+    display: block;
+    width: 240px;
+    height: 140px;
+    /*background: radial-gradient(circle,rgba(232, 30, 94, 1) 0%, rgba(222, 98, 137, 1) 49%);*/
+    background-image: url(../img/card-background.gif);
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-show {
+    transform: rotateY(180deg);
+}
+
+.card-finish img {
+    filter: grayscale(100%);
+}
