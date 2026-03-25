@@ -11,7 +11,7 @@ export default function PageImages() {
                         <Link to='list'>список</Link>
                     </li>
                     <li>
-                        <Link to='list'>картинка</Link>
+                        <Link to='item'>картинка</Link>
                     </li>
                 </ul>
             </div>
