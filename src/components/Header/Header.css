@@ -1,15 +1,19 @@
 header {
-    background-color: pink;
-    padding: 15px;
+    background-color: rgb(255, 246, 249);
+    color: palevioletred;
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    margin-bottom: 30px;
 }
 
 .main-menu ul{
     list-style: none;
     display: flex;
     flex-direction: row;
+    font-size: 18px;
+    margin-top: 10px;
     gap: 20px;
 }
 

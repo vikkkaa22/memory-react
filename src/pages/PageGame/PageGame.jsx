@@ -4,17 +4,24 @@ import Grid from "../../components/Grid/Grid";
 import Header from "../../components/Header/Header";
 import useGame from "../../components/useGame";
 
-import images from "../../data.json"
+import data from "../../data.json"
 import Modal from "../../components/Modal/Modal";
+import { useEffect, useState } from "react";
 
-export default function PageGame() {
+export default function PageGame() 
+{
+
+    const [images, setImages] = useState([]);
+    useEffect(() => {
+        setImages(data.sort(() => Math.random() - 0.5));
+    }, []);
 
     const {
         finishedItems,
         stepsCount,
         isWin,
         handleReset,
-        checkItems } = useGame() //импортируем с деструктуризацией
+        checkItems } = useGame(images) //импортируем с деструктуризацией
 
     const handleBtnReset = () => {
         handleReset()
@@ -28,7 +35,7 @@ export default function PageGame() {
         <div className='container'>
             <Header />
             <main>
-                <div className="steps">{stepsCount}</div>
+                <div className="steps">ваши шаги {stepsCount}</div>
 
                 <Grid
                     images={images}
@@ -54,9 +61,9 @@ export default function PageGame() {
                     )
                 }
             </main>
-            <footer>
+            {/* <footer>
                 <p>&copy; Попова Виктория, 2026 г.</p>
-            </footer>
+            </footer> */}
         </div>
     )
 }
